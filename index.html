@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizNest Tools</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .card:hover { transform: translateY(-5px); transition: 0.3s; }
+    .modal { display: none; }
+    .modal.active { display: flex; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-6 shadow-md text-center">
+    <h1 class="text-4xl font-bold">BizNest Tools</h1>
+    <p class="mt-2 text-lg">All your AI-powered business tools in one place</p>
+  </header>
+
+  <!-- Tools Section -->
+  <section class="max-w-6xl mx-auto mt-12 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Business Plan Generator Card -->
+      <button onclick="openModal('modal-business')" class="card bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl">
+        <h3 class="text-xl font-semibold mb-2">Business Plan Generator</h3>
+        <p>Create complete business plans in seconds</p>
+      </button>
+
+      <!-- Poster Design Generator Card -->
+      <button onclick="openModal('modal-poster')" class="card bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl">
+        <h3 class="text-xl font-semibold mb-2">Poster Design Generator</h3>
+        <p>Design stunning posters quickly</p>
+      </button>
+
+      <!-- One Page Plan Generator Card -->
+      <button onclick="openModal('modal-onepage')" class="card bg-white rounded-2xl shadow-lg p-6 text-center hover:shadow-2xl">
+        <h3 class="text-xl font-semibold mb-2">One Page Plan Generator</h3>
+        <p>Summarize your business ideas into a one-page plan</p>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- Modals -->
+
+  <!-- Business Plan Modal -->
+  <div id="modal-business" class="modal fixed inset-0 bg-black bg-opacity-50 justify-center items-center p-4">
+    <div class="bg-white rounded-xl w-full max-w-4xl h-[80vh] relative">
+      <button onclick="closeModal('modal-business')" class="absolute top-3 right-3 text-gray-700 font-bold text-xl">×</button>
+      <iframe 
+        src="https://app.relevanceai.com/agents/f1db6c/6d63a3dd-b3e7-4899-81be-00947e21c051/8ee108df-ffc8-4dda-a4c8-5051ee3c21e6/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false" 
+        class="w-full h-full rounded-xl" frameborder="0" allow="microphone">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Poster Modal -->
+  <div id="modal-poster" class="modal fixed inset-0 bg-black bg-opacity-50 justify-center items-center p-4">
+    <div class="bg-white rounded-xl w-full max-w-4xl h-[80vh] relative">
+      <button onclick="closeModal('modal-poster')" class="absolute top-3 right-3 text-gray-700 font-bold text-xl">×</button>
+      <iframe 
+        src="https://app.relevanceai.com/agents/f1db6c/6d63a3dd-b3e7-4899-81be-00947e21c051/c7eb7d08-c6f4-43d7-a5a1-d153aa092eb0/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false" 
+        class="w-full h-full rounded-xl" frameborder="0" allow="microphone">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- One Page Plan Modal -->
+  <div id="modal-onepage" class="modal fixed inset-0 bg-black bg-opacity-50 justify-center items-center p-4">
+    <div class="bg-white rounded-xl w-full max-w-4xl h-[80vh] relative">
+      <button onclick="closeModal('modal-onepage')" class="absolute top-3 right-3 text-gray-700 font-bold text-xl">×</button>
+      <iframe 
+        src="https://app.relevanceai.com/agents/f1db6c/6d63a3dd-b3e7-4899-81be-00947e21c051/5d56e0e5-ba22-4ab2-907a-42d2fb7c27f3/embed-chat?hide_tool_steps=false&hide_file_uploads=false&hide_conversation_list=false&bubble_style=agent&primary_color=%23685FFF&bubble_icon=pd%2Fchat&input_placeholder_text=Type+your+message...&hide_logo=false&hide_description=false" 
+        class="w-full h-full rounded-xl" frameborder="0" allow="microphone">
+      </iframe>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+  </script>
+
+ <!-- Footer -->
+<footer class="bg-gray-800 text-gray-200 py-6 text-center mt-auto">
+  <p>&copy; 2025 BizNest. All rights reserved.</p>
+</footer>
+
+
+</body>
+</html>
